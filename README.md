@@ -2,6 +2,9 @@
 
 一个零依赖的静态网站。无构建、无框架、无需 npm。
 
+**线上地址**：<https://ventelios.github.io/space-orch/>
+**仓库**：<https://github.com/Ventelios/space-orch>
+
 ## 本地预览
 
 任选一种：
@@ -33,7 +36,7 @@ php -S localhost:8080
 │       ├── hero.webp/.png  首屏主视觉
 │       ├── earth.webp/.png 地球乐厅
 │       └── fox.webp/.png   狐星剧场
-├── generated-images/       未裁剪的原始生成图（可删）
+├── generated-images/       未裁剪的原始生成图（已 gitignore，不进仓库）
 └── README.md
 ```
 
@@ -41,26 +44,19 @@ php -S localhost:8080
 > 全站唯一的外部链接是「立即报名」，指向腾讯文档报名表：
 > <https://docs.qq.com/form/page/DSUZzRm1Qa29sd0Nq>
 
-## 发布到 GitHub Pages
+## 发布状态
 
-```bash
-git init
-git add .
-git commit -m "feat: 星际首席爱乐乐团招募站"
-git branch -M main
-git remote add origin git@github.com:<你的用户名>/<仓库名>.git
-git push -u origin main
-```
+本仓库已发布到 GitHub Pages，**推送 `main` 分支即自动重建**：
 
-然后在 GitHub 仓库页面：
+- Source：`Deploy from a branch` → `main` / `/ (root)`
+- 站点：<https://ventelios.github.io/space-orch/>
+- 首次部署约需 1–2 分钟
 
-1. **Settings → Pages**
-2. **Source** 选择 `Deploy from a branch`
-3. **Branch** 选 `main` / 目录选 `/ (root)`
-4. 保存，等 1–2 分钟，访问 `https://<用户名>.github.io/<仓库名>/`
+站点全部资源使用相对路径（`assets/…`），因此部署在 `/space-orch/` 这种子路径下也能正常工作；
+若将来换到根域名（自定义域名），无需改动任何路径。
 
-如果之后绑定自定义域名（例如 `space-orch.net`），在 **Custom domain** 填入域名，
-并在 DNS 处添加指向 `<用户名>.github.io` 的 CNAME 记录。
+如果要绑定自定义域名（例如 `space-orch.net`），在仓库 **Settings → Pages → Custom domain**
+填入域名，并在 DNS 处添加指向 `ventelios.github.io` 的 CNAME 记录，同时勾选 `Enforce HTTPS`。
 
 ## 改动指南
 
