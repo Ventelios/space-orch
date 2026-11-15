@@ -1,0 +1,9 @@
+# 原始 AI 生成图（未裁剪、含水印），站点用的是 assets/img 下的成品
+generated-images/
+
+# 本地工具与临时文件
+.workbuddy/
+.shots/
+_m*.html
+.DS_Store
+Thumbs.db
